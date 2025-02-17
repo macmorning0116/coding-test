@@ -13,21 +13,22 @@ public class BOJ2023 {
         Scanner sc = new Scanner(System.in);
         N = sc.nextInt();
 
-        dfs(0,"");
+        dfs(0,0);
 
         System.out.println(sb);
 
     }
 
-    static void dfs(int n, String num){
+    static void dfs(int n, int num){
         if(n == N) {
             sb.append(num);
             sb.append("\n");
         }
 
         for(int i: dig){
-            if(isPrime(Integer.parseInt(num+i))){
-                dfs(n+1, num+i);
+            int temp = num*10 + i;
+            if(isPrime(temp)){
+                dfs(n+1, temp);
             }
         }
     }

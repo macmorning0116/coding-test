@@ -9,7 +9,7 @@ public class BOJ2251 {
     static boolean[] answer = new boolean[201];
     static boolean[][] visited = new boolean[201][201];
     static int[] comp = new int[3];
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 

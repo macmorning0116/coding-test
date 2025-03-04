@@ -15,7 +15,6 @@ public class BOJ1948 {
         List<List<Node>> list = new ArrayList<>(); // 정방향 인접 리스트 저장
         List<List<Node>> reverse = new ArrayList<>(); // 역방향 인접 리스트 저장
         int[] d = new int[n+1]; // 정방향 진입 차수 저장
-        int[] rD = new int[n+1]; // 역방향 진입 차수 저장
         Queue<Integer> q = new LinkedList<>(); // 정방향 큐
         Queue<Integer> rQ = new LinkedList<>(); // 역방향 큐
         int count = 0; // 쉬지않고 달려야 하는 도로의 개수
@@ -34,7 +33,6 @@ public class BOJ1948 {
             int dis = Integer.parseInt(st.nextToken());
 
             d[e]++;  // 정방향 진입 차수 ++
-            rD[s]++; // 역방향 진입 차수 ++
             list.get(s).add(new Node(e,dis)); // 정방향 인접 리스트
             reverse.get(e).add(new Node(s,dis)); // 역방향 인접 리스트
         }

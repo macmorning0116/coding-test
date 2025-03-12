@@ -11,7 +11,6 @@ public class BOJ14425 {
         int M = Integer.parseInt(st.nextToken());
         int answer = 0;
         Map<String, String> map = new HashMap<>();
-
         for(int i = 0; i < N; i++){
             map.put(br.readLine(), " ");
         }

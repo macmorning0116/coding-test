@@ -11,7 +11,7 @@ public class BOJ14501_2 {
         int N = Integer.parseInt(br.readLine());
         int[] t = new int[N+1];
         int[] p = new int[N+1];
-        int[] dp = new int[200];
+        int[] dp = new int[N+2];
 
         for(int i = 1; i <= N; i++){
             st = new StringTokenizer(br.readLine());

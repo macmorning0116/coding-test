@@ -21,7 +21,7 @@ class PGM배달 {
             graph.add(new ArrayList<>());
         }
 
-        for(int i = 0; i < road.length; i++){
+        for(int i = 0; i < road.length; i++){ㅌ
             int node1 = road[i][0];
             int node2 = road[i][1];
             int cost = road[i][2];

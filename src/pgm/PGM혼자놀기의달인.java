@@ -1,5 +1,7 @@
 package pgm;
 
+import java.util.HashMap;
+
 class PGM혼자놀기의달인 {
     int firstGroup = 0;
     int secondGroup = 0;
@@ -17,6 +19,8 @@ class PGM혼자놀기의달인 {
 
             }
         }
+
+        HashMap
 
         return answer;
     }

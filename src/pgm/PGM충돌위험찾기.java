@@ -64,7 +64,7 @@ class PGM충돌위험찾기 {
                         map[si][sj].put(dis, 2);
                         answer++;
                     }
-                }
+                };
 
                 dis++;
             }

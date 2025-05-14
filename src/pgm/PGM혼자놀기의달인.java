@@ -20,7 +20,6 @@ class PGM혼자놀기의달인 {
             }
         }
 
-        HashMap
 
         return answer;
     }

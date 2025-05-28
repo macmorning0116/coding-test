@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM서버증설횟수 {
     public int solution(int[] players, int m, int k) {
         int answer = 0;
         int nowServer = 0;

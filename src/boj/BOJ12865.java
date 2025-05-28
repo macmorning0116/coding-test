@@ -33,6 +33,10 @@ public class BOJ12865 {
             }
         }
 
+        for(int i = 0; i < dp.length; i++){
+            System.out.println(Arrays.toString(dp[i]));
+        }
+
         int max = 0;
         for(int i = 0; i < dp[N].length; i++){
             if(dp[N][i] > max) max = dp[N][i];

@@ -1,32 +1,56 @@
-package pgm;
-
 import java.util.*;
 
 class PGM호텔대실 {
     public int solution(String[][] book_time) {
-        Arrays.sort(book_time, (a, b) -> a[0].compareTo(b[0]));
+        int answer = 0;
 
-        PriorityQueue<Integer> roomQueue = new PriorityQueue<>();
+        PriorityQueue<Node> pq = new PriorityQueue<>((o1, o2) -> {
+            return o1.start - o2.start;
+        });
+
+        PriorityQueue<Node> endPQ = new PriorityQueue<>((o1, o2) -> o1.end - o2.end);
 
         for (String[] time : book_time) {
-            int start = toMinutes(time[0]);
-            int end = toMinutes(time[1]) + 10; // 청소시간 10분 추가
+            String shour = time[0].substring(0, 2);
+            String smin = time[0].substring(3);
 
-            if (!roomQueue.isEmpty() && roomQueue.peek() <= start) {
-                roomQueue.poll();
-            }
+            String ehour = time[1].substring(0, 2);
+            String emin = time[1].substring(3);
 
-            roomQueue.add(end);
+            pq.add(new Node(Integer.parseInt(shour) * 60 + Integer.parseInt(smin),
+                    Integer.parseInt(ehour) * 60 + Integer.parseInt(emin)));
         }
 
-        return roomQueue.size();
+        while (!pq.isEmpty()) {
+            if (endPQ.isEmpty()) {
+                endPQ.add(pq.poll());
+                answer++;
+            } else {
+                if (endPQ.peek().end + 10 <= pq.peek().start) {
+                    endPQ.poll();
+                    endPQ.add(pq.poll());
+                } else {
+                    answer++;
+                    endPQ.add(pq.poll());
+                }
+            }
+        }
+
+
+        return answer;
     }
 
-    private int toMinutes(String time) {
-        String[] parts = time.split(":");
-        int hour = Integer.parseInt(parts[0]);
-        int minute = Integer.parseInt(parts[1]);
-        return hour * 60 + minute;
+    class Node {
+        int start;
+        int end;
+
+        public Node(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+
+        public String toString() {
+            return "[" + start + ", " + end + "]";
+        }
     }
 }
-

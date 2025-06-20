@@ -1,38 +1,34 @@
 package pgm;
 
+import java.util.*;
+
 class PGM숫자블록 {
-
     public int[] solution(long begin, long end) {
-        int size = (int)(end - begin + 1);
-        int[] answer = new int[size];
+        List<Integer> answer = new ArrayList<>();
 
-        for (int i = 0; i < size; i++) {
-            long num = begin + i;
-            answer[i] = getMaxProperDivisor(num);
+        for (long i = begin; i <= end; i++) {
+            answer.add(getNum(i));
         }
 
-        return answer;
+        return answer.stream().mapToInt(i -> i).toArray();
     }
 
-    private int getMaxProperDivisor(long num) {
+    private int getNum(long num) {
+        int result = 1;
         if (num == 1) return 0;
 
-        int max = 1;
-
-        for (long i = 2; i <= Math.sqrt(num); i++) {
+        for (int i = 2; i <= Math.sqrt(num); i++) {
             if (num % i == 0) {
-                long pair = num / i;
+                long d = num / i;
 
-                if (pair <= 10_000_000) {
-                    return (int) pair;
-                }
-
-                if (i <= 10_000_000) {
-                    max = (int) i;
-                }
+                if (d <= 10_000_000) return (int) d;
+                if (i <= 10_000_000) result = Math.max(i, result);
             }
         }
 
-        return max;
+        return result;
     }
+
+
 }
+

@@ -1,46 +1,57 @@
 package pgm;
 
-class PGMNQueen {
-    int answer = 0;
+import java.util.*;
+
+class Solution {
+    boolean[] visited;
+    int answer;
 
     public int solution(int n) {
-        boolean[][] visited = new boolean[n][n];
-        dfs(0, n, visited);
+        answer = 0;
+
+        visited = new boolean[n];
+
+        for (int j = 0; j < n; j++) {
+            List<int[]> tList = new ArrayList<>();
+            tList.add(new int[]{0, j});
+            visited[j] = true;
+            dfs(1, n, 1, tList);
+            visited[j] = false;
+        }
+
         return answer;
     }
 
-    private void dfs(int cnt, int n, boolean[][] visited) {
-        if (cnt == n) {
-            answer++;
+    private void dfs(int dept, int n, int cnt, List<int[]> list) {
+        if (dept == n) {
+
+            if (cnt == n) answer++;
             return;
         }
 
         for (int j = 0; j < n; j++) {
-            if (checkQueen(cnt, j, n, visited)) {
-                visited[cnt][j] = true;
-                dfs(cnt + 1, n, visited);
-                visited[cnt][j] = false;
+            if (!visited[j] && check(dept, j, list)) {
+                visited[j] = true;
+                list.add(new int[]{dept, j});
+                dfs(dept + 1, n, cnt + 1, list);
+                list.remove(list.size() - 1);
+                visited[j] = false;
             }
         }
     }
 
-    private boolean checkQueen(int ci, int cj, int n, boolean[][] visited) {
-        // 세로
-        for (int i = 0; i < ci; i++) {
-            if (visited[i][cj]) return false;
+
+    private boolean check(int i, int j, List<int[]> list) {
+        boolean result = true;
+
+        for (int[] t : list) {
+            if (t[0] == i || t[1] == j || Math.abs(t[0] - i) == Math.abs(t[1] - j)) {
+                result = false;
+                break;
+            }
         }
 
-        // 왼쪽 위 대각선
-        for (int i = ci - 1, j = cj - 1; i >= 0 && j >= 0; i--, j--) {
-            if (visited[i][j]) return false;
-        }
-
-        // 오른쪽 위 대각선
-        for (int i = ci - 1, j = cj + 1; i >= 0 && j < n; i--, j++) {
-            if (visited[i][j]) return false;
-        }
-
-        return true;
+        return result;
     }
 }
 

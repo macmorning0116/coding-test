@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGMNQueen {
     boolean[] visited;
     int answer;
 

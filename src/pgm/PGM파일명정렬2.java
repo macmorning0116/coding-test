@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM파일명정렬2 {
     public String[] solution(String[] files) {
         String[] answer = new String[files.length];
 

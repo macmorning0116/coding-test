@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM혼자서하는틱택토2 {
     public int solution(String[] board) {
 
         char[][] arr = new char[3][3];

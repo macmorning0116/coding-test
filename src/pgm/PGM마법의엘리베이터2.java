@@ -1,6 +1,6 @@
 package pgm;
 
-class Solution {
+class Solution1 {
     public int solution(int storey) {
         int answer = 0;
 

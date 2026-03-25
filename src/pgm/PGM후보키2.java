@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM후보키2 {
     public int solution(String[][] relation) {
         int answer = 0;
         Set<List<Integer>> candidateSet = new HashSet<>();   // 현재 후보키

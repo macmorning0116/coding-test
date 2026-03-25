@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM시소짝꿍2 {
     public long solution(int[] weights) {
         long answer = 0;
         Map<Integer, Long> cnt = new HashMap<>();

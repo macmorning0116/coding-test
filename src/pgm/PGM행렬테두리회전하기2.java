@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM행렬테두리회전하기2 {
     public int[] solution(int rows, int columns, int[][] queries) {
         int[] answer = new int[queries.length];
 

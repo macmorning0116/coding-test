@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.Stack;
 
-class Solution {
+class PGM괄호변환2 {
     public String solution(String p) {
         String answer = "";
 

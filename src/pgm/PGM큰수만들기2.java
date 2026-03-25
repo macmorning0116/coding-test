@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM큰수만들기2 {
     public String solution(String number, int k) {
 
         int len = number.length();

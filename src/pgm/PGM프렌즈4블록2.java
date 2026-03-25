@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM프렌즈4블록2 {
     public int solution(int m, int n, String[] board) {
         int answer = 0;
 

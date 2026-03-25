@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM요격시스템 {
     public int solution(int[][] targets) {
         int answer = 0;
 

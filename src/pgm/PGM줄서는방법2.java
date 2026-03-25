@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM줄서는방법2 {
     public int[] solution(int n, long k) {
         int[] result = new int[n];
         List<Integer> answer = new ArrayList<>();

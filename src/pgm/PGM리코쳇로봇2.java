@@ -2,7 +2,7 @@ package pgm;
 
 import java.util.*;
 
-class Solution {
+class PGM리코쳇로봇2 {
     int[] di = {1, 0, -1, 0};
     int[] dj = {0, 1, 0, -1};
 
